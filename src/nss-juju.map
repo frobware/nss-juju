@@ -1,0 +1,8 @@
+NSS_JUJU_2 {
+global:
+_nss_juju_gethostbyname2_r;
+_nss_juju_gethostbyname3_r;
+_nss_juju_gethostbyname_r;
+local:
+*;
+};

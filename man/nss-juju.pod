@@ -1,0 +1,59 @@
+# pod2man --section=8 --release="nss-juju" --center="nss-juju" --date="04 Sep 2016"
+
+=head1 NAME
+
+nss-juju - NSS module for resolving Juju host names
+
+=head1 SYNOPSIS
+
+libnss_juju.so.2
+
+=head1 DESCRIPTION
+
+nss-juju is a plug-in module for the GNU Name Service Switch (NSS)
+functionality of the GNU C Library (glibc) enabling it to resolve Juju
+encoded host names.
+
+To activate the NSS module, add "juju" to the line starting with
+C<hosts> in F</etc/nsswitch.conf>. It is recommended to place "juju"
+early in the list, but after the "files" entry.
+
+=head1 EXAMPLE
+
+F</etc/nsswitch.conf>
+
+  passwd:         compat
+  group:          compat
+  shadow:         compat
+  gshadow:        files
+
+  hosts:          files juju mdns4_minimal [NOTFOUND=return] dns
+  networks:       files
+
+  protocols:      db files
+  services:       db files
+  ethers:         db files
+  rpc:            db files
+
+  netgroup:       nis>
+
+=head1 SEE ALSO
+
+juju(1), nsswitch.conf(5)
+
+=head1 LIMITATIONS
+
+Reverse lookup is not supported.
+
+=head1 BUGS
+
+File issues at L<https://github.com/frobware/nss-juju/issues>
+
+=head1 AUTHORS
+
+Andrew McDermott <andrew.mcdermott@canonical.com>
+
+=head1 COPYING
+
+nss-juju is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE
+(Version 3).

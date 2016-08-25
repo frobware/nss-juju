@@ -1,0 +1,4 @@
+new-package-should-close-itp-bug libnss-juju.*
+non-dev-pkg-with-shlib-symlink .*
+postrm-should-call-ldconfig .*
+package-name-doesnt-match-sonames libnss-juju.*

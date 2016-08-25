@@ -1,0 +1,70 @@
+#
+# Shared libraries
+#
+/Makefile
+/Makefile.in
+/aclocal.m4
+/autom4te.cache/
+/config.*
+/configure
+/depcomp
+/install-sh
+/libtool
+/ltmain.sh
+/m4/
+/missing
+/stamp-h?
+/.dirstamp
+.libs/
+*.l[ao]
+
+#
+# Executables
+#
+/Makefile
+/Makefile.in
+/aclocal.m4
+/autom4te.cache/
+/config.*
+/configure
+/m4/libtool.m4
+/m4/ltoptions.m4
+/m4/ltsugar.m4
+/m4/ltversion.m4
+/m4/lt~obsolete.m4
+/stamp-h?
+.deps/
+.dirstamp
+*.o
+
+# Autoconf
+build-aux/
+
+# Generated man pages
+/man/nss-juju.8
+
+# Tests
+/test-suite.log
+/tests/.libs/
+/tests/check_gethostbyname
+/tests/check_gethostbyname.log
+/tests/check_gethostbyname.trs
+
+# Coverage
+*.gcda
+*.gcno
+
+# valgrind logs
+/test-suite-drd.log
+/test-suite-helgrind.log
+/test-suite-memcheck.log
+/test-suite-sgcheck.log
+
+# debian
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/libnss-juju.debhelper.log
+debian/libnss-juju.substvars
+debian/libnss-juju/
+debian/tmp/

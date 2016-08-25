@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+include /usr/share/dpkg/default.mk
+
+DESTDIR := $(CURDIR)/debian/tmp
+
+%:
+	dh $@  --with autoreconf
+
+override_dh_auto_install:
+	dh_auto_install -- DESTDIR="$(DESTDIR)"
+
+override_dh_install:
+	dh_install --list-missing
