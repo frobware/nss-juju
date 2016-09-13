@@ -44,10 +44,37 @@ IPv6 names must be fully expanded (i.e., no collapsed 0's (zeros)).
 
 ## Limitations
 
-### Reverse lookup is not possible
+### Reverse lookup needs to be handled by the host
 
-The module cannot be authoritative for arbitrary IP addresses,
+The module itself cannot be authoritative for arbitrary IP addresses,
 particularly if the module is listed before the ```dns``` entry.
+
+**It can, however, rely on the host to do reverse lookup**.
+
+#### Reverse lookup on AWS
+
+	$ hostname
+	ip-172-31-0-139
+
+	$ unit-get hostname
+	juju-ip-172-31-0-139
+
+	$ getent hosts juju-ip-172-31-0-139
+	172.31.0.139    juju-ip-172-31-0-139
+
+	# Reverse lookup
+	$ dig -x 172.31.0.139 +short
+	ip-172-31-0-139.ec2.internal.
+
+	# Forward lookup
+	$ dig ip-172-31-0-139.ec2.internal. +short
+	172.31.0.139
+
+This is also true for GCE too.
+
+**But this is _not_ true on Azure**; the reverse lookup does not yield
+any hostname (though this may be a limitation of the way Juju is
+currently provisioning the machine).
 
 ### Only IPv4 or IPv6 for a single hostname
 
