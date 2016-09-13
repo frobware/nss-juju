@@ -12,5 +12,5 @@ Package: libnss-juju
 Architecture: any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: This package contains a module for the Name Service Switch, providing host
- name resolution for Juju container names.
+Description: This package contains a module for Name Service Switch, providing internet
+ address resolution for Juju encoded host names.
