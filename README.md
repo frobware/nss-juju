@@ -1,16 +1,14 @@
 # Name Service Switch (NSS) module for Juju (Proof of Concept).
 
-This Name Service Switch (NSS) module provides internet address
-resolution for Juju encoded hostnames.
+This Name Service Switch (NSS) module provides address resolution for
+Juju encoded hostnames.
 
 ## Supporting Juju charms
 
 Some charms require a hostname in lieu of an IP address to work
-properly. To support this you can use ```unit-get hostname``` in a
-charm hook to get an always-resolvable hostname. Internet address
-resolution is provided by this plugin. Note: ```unit-get hostname```
-is not implemented in Juju at the moment; this proof of concept was to
-explore the limitations of NSS.
+properly. To support this you can use ```network-get
+--primary-hostname``` in a charm hook to get an always-resolvable
+hostname. Address resolution is provided by this plugin.
 
 The encoding of the name is *TBD* but this proof of concept currently
 supports the following patterns:
@@ -27,7 +25,7 @@ IPv6 names must be fully expanded (i.e., no collapsed 0's (zeros)).
 
 ### Juju Charm Example
 
-	$ unit-get hostname
+	$ network-get --primary-hostname
 	juju-ip-192-168-20-1
 
 ### General Address Resolution
@@ -56,7 +54,7 @@ particularly if the module is listed before the ```dns``` entry.
 	$ hostname
 	ip-172-31-0-139
 
-	$ unit-get hostname
+	$ network-get --primary-hostname
 	juju-ip-172-31-0-139
 
 	$ getent hosts juju-ip-172-31-0-139
