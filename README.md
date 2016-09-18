@@ -45,9 +45,8 @@ IPv6 names must be fully expanded (i.e., no collapsed 0's (zeros)).
 ### Reverse lookup needs to be handled by the host
 
 The module itself cannot be authoritative for arbitrary IP addresses,
-particularly if the module is listed before the ```dns``` entry.
-
-**It can, however, rely on the host to do reverse lookup**.
+particularly if the module is listed before the ```dns``` entry. It
+can, however, rely on the host to do reverse lookup.
 
 #### Reverse lookup on AWS
 
@@ -68,11 +67,13 @@ particularly if the module is listed before the ```dns``` entry.
 	$ dig ip-172-31-0-139.ec2.internal. +short
 	172.31.0.139
 
-This is also true for GCE too.
+#### Reverse lookup on CE
 
-**But this is _not_ true on Azure**; the reverse lookup does not yield
-any hostname (though this may be a limitation of the way Juju is
-currently provisioning the machine).
+Works and behaves the same way as AWS does.
+
+#### Reverse lookup on Azure
+
+Reverse lookup does **not** yield a result.
 
 ### Only IPv4 or IPv6 for a single hostname
 
