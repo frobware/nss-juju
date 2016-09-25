@@ -19,7 +19,6 @@ m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
 AC_DEFUN([NSS_JUJU_CHECK_MACRO], [m4_ifndef([$1], [m4_fatal([macro ]$1[ is not defined. Is ]$2[ installed?])])])
 NSS_JUJU_CHECK_MACRO([AX_APPEND_COMPILE_FLAGS], [autoconf-archive])
-NSS_JUJU_CHECK_MACRO([AX_VALGRIND_CHECK], [autoconf-archive])
 
 AC_ARG_VAR([V], [Verbose output])
 AC_ARG_VAR([EXTRA_CFLAGS], [Extra C compiler flags])

@@ -12,6 +12,7 @@ EXTRA_DIST =					\
 	m4/acx_debug_cflags.m4			\
 	m4/ax_check_enable_debug.m4		\
 	m4/gcov.m4				\
+	m4/ax_valgrind_check.m4			\
 	src/nss-juju.map
 
 noinst_HEADERS = src/nss-juju.h
