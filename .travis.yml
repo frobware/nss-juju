@@ -5,7 +5,8 @@ before_install:
   - sudo apt-get update -qq
 install:
   - sudo apt-get install -qq -y equivs devscripts valgrind colorgcc
-  - yes | sudo mk-build-deps -i -r debian/control
+  - mk-build-deps debian/control
+  - sudo apt-get install -qq -y ./nss-juju-build-deps*.deb
 script:
   - ./autogen.sh
   - ./configure CC=$TRAVIS_CC --prefix=/usr --enable-valgrind
