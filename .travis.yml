@@ -1,0 +1,23 @@
+sudo: true
+language: c
+before_install:
+  - sudo apt-get update -qq
+install:
+  - sudo apt-get install -qq -y mk-build-deps colorgcc
+  - sudo apt-get install -qq -y equivs devscripts valgrind
+  - yes | sudo mk-build-deps -i -r debian/control
+script:
+  - ./autogen.sh
+  - ./configure CC=$TRAVIS_CC --prefix=/usr --enable-valgrind
+  - make check
+  - make check-valgrind
+  - sudo make install
+  - make distcheck
+  - make distclean
+  - sudo ./debian/libnss-juju.postinst configure
+  - getent hosts juju-ip-1-2-3-4 > /tmp/x
+  - cat /tmp/x
+  - grep 1.2.3.4 /tmp/x
+env:
+  matrix:
+    - TRAVIS_CC=colorgcc EXTRA_CFLAGS='-Wall -Werror'
