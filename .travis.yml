@@ -1,5 +1,6 @@
 sudo: true
 language: c
+dist: xenial
 before_install:
   - sudo apt-get update -qq
 install:
