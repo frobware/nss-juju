@@ -3,8 +3,7 @@ language: c
 before_install:
   - sudo apt-get update -qq
 install:
-  - sudo apt-get install -qq -y mk-build-deps colorgcc
-  - sudo apt-get install -qq -y equivs devscripts valgrind
+  - sudo apt-get install -qq -y equivs devscripts valgrind colorgcc
   - yes | sudo mk-build-deps -i -r debian/control
 script:
   - ./autogen.sh
