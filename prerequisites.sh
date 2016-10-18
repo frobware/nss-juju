@@ -11,5 +11,6 @@ eatmydata apt-get install -y -qq				\
      debhelper					\
      dh-autoreconf				\
      dpkg-dev					\
+     gcovr					\
      lcov					\
      pkg-config
