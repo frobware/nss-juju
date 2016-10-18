@@ -9,4 +9,5 @@ apt-get install -y -qq				\
      debhelper					\
      dh-autoreconf				\
      dpkg-dev					\
+     lcov					\
      pkg-config
