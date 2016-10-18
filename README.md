@@ -3,6 +3,11 @@
 This Name Service Switch (NSS) module provides internet address
 resolution for Juju encoded hostnames.
 
+## CI status
+
+ * Travis: [![Build Status](https://travis-ci.org/frobware/nss-juju.svg?branch=master)](https://travis-ci.org/frobware/nss-juju)
+ * Coverage: [![Coverage Status](https://coveralls.io/repos/github/frobware/nss-juju/badge.svg?branch=master)](https://coveralls.io/github/frobware/nss-juju?branch=master)
+
 ## Supporting Juju charms
 
 Some charms require a hostname in lieu of an IP address to work
