@@ -12,8 +12,9 @@ script:
   - make check
   - make check-valgrind
   - sudo make install
+  - make coverage-gcovr
+  - make coverage-html
   - make distcheck
-  - make distclean
   - sudo ./debian/libnss-juju.postinst configure
   - getent hosts juju-ip-1-2-3-4 > /tmp/x
   - cat /tmp/x
