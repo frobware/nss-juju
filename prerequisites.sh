@@ -2,7 +2,9 @@
 
 apt-get update -y -qq
 
-apt-get install -y -qq				\
+apt-get install -y -qq eatmydata
+
+eatmydata apt-get install -y -qq				\
      autoconf-archive				\
      autotools-dev				\
      check					\

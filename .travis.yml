@@ -4,7 +4,7 @@ dist: xenial
 before_install:
   - sudo apt-get update -qq
 install:
-  - sudo apt-get install -qq -y equivs devscripts valgrind colorgcc lcov
+  - sudo apt-get install -qq -y equivs devscripts valgrind colorgcc lcov eatmydata
   - sudo ./prerequisites.sh
 script:
   - ./autogen.sh
