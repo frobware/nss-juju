@@ -8,7 +8,7 @@ install:
   - sudo ./prerequisites.sh
 script:
   - ./autogen.sh
-  - ./configure CC=$TRAVIS_CC --prefix=/usr --enable-valgrind
+  - ./configure CC=$TRAVIS_CC --prefix=/usr --enable-valgrind --enable-gcov
   - make check
   - make check-valgrind
   - sudo make install
@@ -20,6 +20,6 @@ script:
   - grep 1.2.3.4 /tmp/x
 env:
   matrix:
-    - TRAVIS_CC=colorgcc EXTRA_CFLAGS='-Wall -Werror -coverage'
+    - TRAVIS_CC=colorgcc EXTRA_CFLAGS='-Wall -Werror'
 after_success:
   - bash <(curl -s https://codecov.io/bash)
