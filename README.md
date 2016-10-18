@@ -136,8 +136,8 @@ You can verify the module is working using ```getent(1)```.
 And if you had a machine with that address on your network you can
 ping it by name:
 
-	$ ping -c 4 juju-192-168-20-1
-	PING juju-192-168-20-1 (192.168.20.1) 56(84) bytes of data.
+	$ ping -c 4 juju-ip-192-168-20-1
+	PING juju-ip-192-168-20-1 (192.168.20.1) 56(84) bytes of data.
 	64 bytes from 192.168.20.1: icmp_seq=1 ttl=64 time=0.069 ms
 	64 bytes from 192.168.20.1: icmp_seq=2 ttl=64 time=0.052 ms
 	64 bytes from 192.168.20.1: icmp_seq=3 ttl=64 time=0.048 ms
