@@ -6,7 +6,8 @@ resolution for Juju encoded hostnames.
 ## CI status
 
  * Travis: [![Build Status](https://travis-ci.org/frobware/nss-juju.svg?branch=master)](https://travis-ci.org/frobware/nss-juju)
- * Coverage: [![Coverage Status](https://coveralls.io/repos/github/frobware/nss-juju/badge.svg?branch=master)](https://coveralls.io/github/frobware/nss-juju?branch=master)
+ * Coveralls: [![Coverage Status](https://coveralls.io/repos/github/frobware/nss-juju/badge.svg?branch=master)](https://coveralls.io/github/frobware/nss-juju?branch=master)
+ * Codecov: [![Coverage status](https://codecov.io/gh/frobware/nss-juju/branch/master/graph/badge.svg)](https://codecov.io/gh/frobware/nss-juju)
 
 ## Supporting Juju charms
 

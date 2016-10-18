@@ -4,16 +4,17 @@ dist: xenial
 before_install:
   - sudo apt-get update -qq
 install:
-  - sudo apt-get install -qq -y equivs devscripts valgrind colorgcc
+  - sudo apt-get install -qq -y equivs devscripts valgrind colorgcc lcov eatmydata
   - sudo ./prerequisites.sh
 script:
   - ./autogen.sh
-  - ./configure CC=$TRAVIS_CC --prefix=/usr --enable-valgrind
+  - ./configure CC=$TRAVIS_CC --prefix=/usr --enable-valgrind --enable-gcov
   - make check
   - make check-valgrind
   - sudo make install
+  - make coverage-gcovr
+  - make coverage-html
   - make distcheck
-  - make distclean
   - sudo ./debian/libnss-juju.postinst configure
   - getent hosts juju-ip-1-2-3-4 > /tmp/x
   - cat /tmp/x
@@ -21,3 +22,5 @@ script:
 env:
   matrix:
     - TRAVIS_CC=colorgcc EXTRA_CFLAGS='-Wall -Werror'
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
