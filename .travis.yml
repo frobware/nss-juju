@@ -20,4 +20,6 @@ script:
   - grep 1.2.3.4 /tmp/x
 env:
   matrix:
-    - TRAVIS_CC=colorgcc EXTRA_CFLAGS='-Wall -Werror'
+    - TRAVIS_CC=colorgcc EXTRA_CFLAGS='-Wall -Werror -coverage'
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
