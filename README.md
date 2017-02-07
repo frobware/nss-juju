@@ -71,7 +71,7 @@ can, however, rely on the host to do reverse lookup.
 	$ dig ip-172-31-0-139.ec2.internal. +short
 	172.31.0.139
 
-#### Reverse lookup on CE
+#### Reverse lookup on GCE
 
 Works and behaves the same way as AWS does.
 
