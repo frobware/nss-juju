@@ -149,9 +149,8 @@ static int nss_juju_getaddrinfo(const char *name,
 	size_t i;
 
 	for (i = 0; i < NELEMENTS(matchers); i++) {
-		if (matchers[i].pr == NULL)
-			continue;
-		if (find_address(matchers[i].pr, name, ai) == 0)
+		if (matchers[i].pr != NULL &&
+		    find_address(matchers[i].pr, name, ai) == 0)
 			return 0;
 	}
 
